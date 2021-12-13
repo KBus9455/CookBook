@@ -27,22 +27,25 @@ body {
 
 .container div {
     width: 100%;
-    margin-top: 1em;
 }
 
 label {
     text-indent: 0.3em;
         text-align: left;
     display: inline-block;
-    width: 90%;
+    width: 100%;
+    margin-top: 1rem;
 }
-
+div.inputs{
+    width: 90%;
+    margin: 0 auto;
+}
 input {
         font-family: 'Kumbh Sans',
         sans-serif;
-width: 90%;
+width: 100%;
 padding: 1em 0;
-margin: 0.5em 0;
+margin: 0.5em 0 0 0;
 text-indent: 0.5em;
 border: solid rgb(211, 209, 209) 0.5px;
 border-radius: 5px;
@@ -66,6 +69,17 @@ button {padding:0.7em 2em;
         border-radius: 10px;
         color:white;
 } 
+div.validAlert.active{
+    text-align: left;
+    color:rgb(190, 40, 40);
+    font-size: 0.9rem;
+    margin-top:0.3rem;
+
+
+}
+input.validAlert{
+    border: solid 1px rgb(190, 40, 40);
+}
 
 @media (max-width: 500px){
 .container{
