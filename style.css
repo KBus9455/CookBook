@@ -4,19 +4,17 @@
     box-sizing: border-box;
 }
 
-body {
+ div.singleRecipe, div.mainpage {
 background: rgb(255, 255, 255);
 background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.29735644257703087) 30%, rgba(0, 0, 0, 0.3029586834733894) 74%, rgba(255, 255, 255, 0) 100%);
     background-size: cover;
     font-family: 'Kumbh Sans',
         sans-serif;
-    max-height: 100vh;
-    ;
+        min-height: 100vh;
 }
 
-nav {
-    /* background-image: url(images/wood-g81547b6b8_1920.jpg);
-    background-size: cover; */
+.singleRecipe nav,
+.mainpage nav {
     height: 4rem;
     position: fixed;
     width: 100%;
@@ -26,7 +24,8 @@ nav {
         z-index: 1;
 }
 
-nav ul.topPanel {
+
+.singleRecipe nav ul.topPanel, .mainpage nav ul.topPanel {
     display: flex;
     width: 100%;
     max-width: 1200px;
@@ -36,16 +35,17 @@ nav ul.topPanel {
 
 }
 
-nav ul.topPanel li:nth-child(1) {
+.singleRecipe nav ul.topPanel li:nth-child(1), .mainpage nav ul.topPanel li:nth-child(1) {
     flex-grow: 1;
 }
 
-.topPanel span {
+
+.singleRecipe .topPanel span, .mainpage .topPanel span {
     display: inline-block;
     width: 1em;
 }
 
-header {
+.mainpage header {
     background-color: white;
     margin: 4rem auto 0rem auto;
     padding: 1em;
@@ -55,7 +55,7 @@ background-size: cover;
 height:40vh;
 
 }
-header div{
+ .mainpage header div {
         font-size: 1.3em;
     text-shadow: white;
     color:rgb(223, 223, 223);
@@ -65,13 +65,14 @@ header div{
     transform: translateY(-20%);
 }
 
-main {
+
+.mainpage main {
     background-color: white;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-button {
+.singleRecipe button, .mainpage button {
     padding: 0.7em 2em;
     font-size: 1em;
     font-weight: 700;
@@ -85,37 +86,37 @@ button {
     text-decoration: none;
 }
 
-button a {
+.singleRecipe button a,.mainpage button a {
     color: white;
     text-decoration: none;
     font-weight: normal;
 }
 
-section h1{
+.mainpage section h1 {
     padding:1em;
 
 }
-section{
+.mainpage section {
         width: 95%;
         margin: 0 auto;
 }
-div.lastRecipe{
+.mainpage div.lastRecipe {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
 
 }
-.lastRecipe img {
+.mainpage .lastRecipe img {
 max-width: 50%;
 }
-div.lastRecipeDescription{
+.mainpage div.lastRecipeDescription {
     width: 47%;
 }
-h2 {
+.mainpage h2 {
     padding: 0.5em 0.5em 0.5em 0;
 }
-.previousRecipes{
+.mainpage .previousRecipes {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -154,4 +155,162 @@ footer{
     background-color: white;
     max-width: 1200px;
     margin:0 auto;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.form, div.singleRecipe {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(219, 172, 235);
+    background: linear-gradient(302deg, rgba(219, 172, 235, 1) 22%, rgba(128, 158, 228, 1) 63%, rgba(46, 46, 215, 1) 88%);
+    background-image: url(images/registerbackground.jpg);
+    background-size: cover;
+}
+
+.form .container {
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(220, 16%, 99%);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.form .container div {
+    width: 100%;
+}
+
+.form label {
+    text-indent: 0.3em;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form div.inputs {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form input {
+    font-family: 'Kumbh Sans',
+        sans-serif;
+    width: 100%;
+    padding: 1em 0;
+    margin: 0.5em 0 0 0;
+    text-indent: 0.5em;
+    border: solid rgb(211, 209, 209) 0.5px;
+    border-radius: 5px;
+}
+
+.form h1,
+.form p,
+.form button {
+    margin: 1em;
+}
+
+
+.form button {
+    padding: 0.7em 2em;
+    font-size: 1em;
+    font-weight: 700;
+    font-family: 'Kumbh Sans',
+        sans-serif;
+    background: rgb(28, 189, 54);
+
+    border: 0 solid transparent;
+    border-radius: 10px;
+    color: white;
+}
+
+.form div.validAlert.active {
+    text-align: left;
+    color: rgb(190, 40, 40);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+
+
+}
+
+.form input.validAlert {
+    border: solid 1px rgb(190, 40, 40);
+}
+
+.singleRecipe main.recipe {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 1em 4em 5em 4em;
+    border-radius: 2em;
+    flex-wrap: wrap;
+    max-width: 1100px;
+}
+.recipe div.recipePhoto {
+ height: 40%;
+ width: 100%;
+ text-align: center;
+ padding: 1em 1em 0.5em 1em;
+}
+
+.recipe div.recipeDescription {
+ height: 50%;
+    font-size: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+      line-height: 1.5rem;
+
+}
+.recipe h1 {
+    text-align: center;
+ height: 10%;
+ width: 100%;
+    padding: 1em 1em 0.5em 1em;
+}
+.recipe h2 {
+    padding: 0.5em;
+}
+.recipeDescription .col1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5rem;
+       width: 30%;
+}
+.recipeDescription .col2 {
+    width: 70%;
+}
+.recipe .col1 td:nth-child(1){
+padding: 0.5em 0.5em 0.5em 0.1em;
+    text-align: center;
+}
+.recipe .col1 td i {
+    color:rgb(28, 189, 54);
+    font-weight: 900;
+    font-size: 1.2em;
+    text-align: center;
+}
+.recipe div a {
+    text-decoration: none;
+}
+
+@media (max-width: 500px) {
+    .form .container {
+        max-width: 90vw;
+    }
 }
