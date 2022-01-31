@@ -10,8 +10,18 @@ background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2
     background-size: cover;
     font-family: 'Kumbh Sans',
         sans-serif;
+
+}
+div.mainpage{
         min-height: 100vh;
 }
+
+ div.singleRecipe {
+        min-height: 100vh;
+        position: fixed;
+        top:0;
+        left: 0;
+ }
 
 .singleRecipe nav,
 .mainpage nav {
@@ -40,7 +50,7 @@ background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2
 }
 
 
-.singleRecipe .topPanel span, .mainpage .topPanel span {
+.singleRecipe .topPanel span, .mainpage .topPanel span, .recipeTitle span {
     display: inline-block;
     width: 1em;
 }
@@ -165,6 +175,7 @@ footer{
     box-sizing: border-box;
 }
 
+
 div.form, div.singleRecipe {
     width: 100vw;
     height: 100vh;
@@ -203,6 +214,7 @@ div.form, div.singleRecipe {
     margin: 0 auto;
 }
 
+textarea,
 .form input {
     font-family: 'Kumbh Sans',
         sans-serif;
@@ -246,27 +258,38 @@ div.form, div.singleRecipe {
 .form input.validAlert {
     border: solid 1px rgb(190, 40, 40);
 }
-
-.singleRecipe main.recipe {
+.mainPanelSingleRecipe{
+    position:relative;
+    width: 100vw;
+    min-height: calc(100% - 4rem);
+    margin-top:4rem;
+}
+ main.recipe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
     background-color: white;
-    padding: 1em 4em 5em 4em;
+    padding: 1em 2em;
     border-radius: 2em;
-    flex-wrap: wrap;
     max-width: 1100px;
+    width: 70%;
+    height: 90%;
+
 }
+
 .recipe div.recipePhoto {
+    flex-grow: 1;
  height: 40%;
  width: 100%;
  text-align: center;
  padding: 1em 1em 0.5em 1em;
 }
-
+.recipe div.recipePhoto img {
+height: 100%;
+}
 .recipe div.recipeDescription {
  height: 50%;
     font-size: 1em;
@@ -276,12 +299,18 @@ div.form, div.singleRecipe {
       line-height: 1.5rem;
 
 }
-.recipe h1 {
+.recipeTitle {
+    display: flex;
+    flex-direction: row;
     text-align: center;
  height: 10%;
  width: 100%;
     padding: 1em 1em 0.5em 1em;
 }
+.recipeTitle h1 {
+    flex-grow: 1;
+}
+
 .recipe h2 {
     padding: 0.5em;
 }
@@ -299,14 +328,25 @@ div.form, div.singleRecipe {
 padding: 0.5em 0.5em 0.5em 0.1em;
     text-align: center;
 }
-.recipe .col1 td i {
+.recipe .col1 td i,
+.recipeTitle i {
     color:rgb(28, 189, 54);
     font-weight: 900;
     font-size: 1.2em;
     text-align: center;
 }
+
+.recipeTitle i {
+cursor: pointer;
+}
 .recipe div a {
     text-decoration: none;
+}
+.addRecipe #description {
+    height: 20em;
+}
+.addRecipe .registerbtn{
+    margin: 2em;
 }
 
 @media (max-width: 500px) {
